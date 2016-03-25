@@ -14,14 +14,14 @@
     {% if page.in_menu%}
     <li class="{% if page.has_children_in_menu %}dropdown{% endif %} {% if page.is_current_or_ascendant %}active{% endif %}"
         id="{{ page.html_id }}">
-        <a href="{{ page.get_absolute_url }}" class="hidden-xs{% if page.has_children_in_menu %} dropdown-toggle{% endif %}">
+        <a href="{{ page.get_absolute_url }}" class="hidden-xs{% if page.has_children_in_menu %} dropdown-toggle" data-toggle="dropdown{% endif %}">
             {% if page.html_id == "-" %}<i class="pe-7s-home"></i>{% endif %}
             {% if page.html_id == "blog" %}<i class="pe-7s-news-paper"></i>{% endif %}
             {% if page.html_id == "about" %}<i class="pe-7s-users"></i>{% endif %}
             {% if page.html_id == "gallery" %}<i class="pe-7s-photo-gallery"></i>{% endif %}
             <p>{{ page.title }}{% if page.has_children_in_menu %}<span class="caret"></span>{% endif %}</p>
         </a>
-        <a href="{{ page.get_absolute_url }}" class="visible-xs{% if page.has_children_in_menu %} dropdown-toggle{% endif %}">
+        <a href="{{ page.get_absolute_url }}" class="visible-xs{% if page.has_children_in_menu %} dropdown-toggle" data-toggle="dropdown{% endif %}">
             {% if page.html_id == "-" %}<i class="pe-7s-home"></i>{% endif %}
             {% if page.html_id == "blog" %}<i class="pe-7s-news-paper"></i>{% endif %}
             {% if page.html_id == "about" %}<i class="pe-7s-users"></i>{% endif %}
