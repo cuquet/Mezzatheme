@@ -1,0 +1,169 @@
+{% extends "blog/blog_post_list.html" %}
+{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n disqus_tags staticfiles %}
+
+{% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for blog_post as tags %}
+{% for tag in tags %}{% if not forloop.first %}, {% endif %}{{ tag }}{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ blog_post.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}{% editable blog_post.title %}{{ blog_post.title }}{% endeditable %}{% endblock %}
+
+{% block pro-text %}
+            {% with blog_post.categories.all as categories %}
+            {% if categories %}
+            {% for category in categories %}
+            {{ category }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+{% endblock pro-text %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+<li class="active">{{ blog_post.title }}</li>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+    <div class="media bottom-border">
+        <div class="media-header">
+        {% block blog_post_detail_postedby %}
+            <div class="blog-list-detail" style="float: right;display:block;width:50%;">
+            {% block blog_post_detail_featured_image %}
+                {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                <div class="media-right media-top" style="border-right: 1px dashed #CCCCCC;padding-right:10px;margin-bottom:5px;margin-right:10px;float:left;">
+                    <img class="media-object" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 100 100 %}">
+                </div>
+                {% endif %}
+            {% endblock %}
+                <div class="entry-meta">
+                {% editable blog_post.publish_date %}
+                    <p><i class="fa fa-user"></i>
+                    {% trans "Posted by" %}:
+                    {% with blog_post.user as author %}
+                    <a href="{% url 'blog_post_list_author' author %}">{{ author.get_full_name|default:author.username }}</a>
+                    {% endwith %}</p>
+                    <p><span data-toggle="tooltip" data-placement="top" title="{{ blog_post.publish_date|date:'d M Y' }}">
+                    <i class="fa fa-calendar"></i>
+                    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
+                    </span></p>
+                    {% block blog_post_detail_commentlink %}
+                    {% if blog_post.allow_comments %}
+                    <p>
+                        {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                            (  <i class="fa fa-comments"></i> <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                                data-disqus-identifier="{% disqus_id_for blog_post %}"></a>
+                            {% spaceless %}{% trans "Comments" %}{% endspaceless %}  )
+                        {% else %}( <a href="#comments">{% spaceless %}
+                            {% if blog_post.comments_count == 1 %}<i class="fa fa-comment"></i>
+                            {% elif blog_post.comments_count > 1 %}<i class="fa fa-comments"></i>
+                            {% else %}<i class="fa fa-comment-o"></i>
+                            {% endif%}
+                            {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                            {% endspaceless %}</a> )
+                        {% endif %}
+                    </p>
+                    {% endif %}
+                    {% endblock %}
+                {% endeditable %}
+                </div>
+        {% endblock %}
+        {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+        {% include "generic/includes/disqus_counts.html" %}
+        {% endif %}
+            </div>
+        </div>
+        {% block blog_post_detail_content %}
+        {% editable blog_post.content %}
+        {{ blog_post.content|richtext_filters|safe }}
+        {% endeditable %}
+        {% endblock %}
+    </div>
+</div></div>
+
+    {% block blog_post_detail_rating %}
+        <!--TODO-->
+        {# rating_for blog_post #}
+    {% endblock %}
+
+    {% block blog_post_previous_next %}
+    <nav>
+        <ul class="pager">
+        {% with blog_post.get_previous_by_publish_date as previous %}
+        {% if previous %}
+        <li class="previous">
+            <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+        </li>
+        {% endif %}
+        {% endwith %}
+        {% with blog_post.get_next_by_publish_date as next %}
+        {% if next %}
+        <li class="next">
+            <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+        </li>
+        {% endif %}
+        {% endwith %}
+        </ul>
+    </nav>
+    {% endblock %}
+
+    {% block blog_post_detail_related_posts %}
+    {% if related_posts %}
+    <div id="related-posts">
+        <h3>{% trans 'Related posts' %}</h3>
+        <ul class="list-unstyled">
+        {% for post in related_posts %}
+             <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endblock %}
+
+    {% block blog_post_detail_comments %}
+    {% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
+    {% endblock blog_post_detail_comments %}
+
+{% endblock %}
+
+{% block social_buttons%}
+{% set_short_url_for blog_post %}
+<div class="bottom-border">
+    <div class="social-buttons" >
+        <a class="btn btn-social btn-fill btn-twitter" target="_blank"
+            href="https://twitter.com/intent/tweet?url={{ blog_post.short_url|urlencode }}&amp;text={{ blog_post.title|urlencode }}&amp;via={{ 'Melindro.org'|urlencode }}" >
+             <i class="fa fa-twitter"></i>
+        </a>
+        <a class="btn btn-social btn-fill btn-facebook" target="_blank"
+           href="https://facebook.com/sharer.php?u={{ blog_post.short_url|urlencode }}&amp;t={{ blog_post.title|urlencode }}" >
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a class="btn btn-social btn-fill btn-google" target="_blank"
+           href="https://plus.google.com/share?url={{ blog_post.short_url|urlencode }}" >
+            <i class="fa fa-google-plus"></i>
+        </a>
+        <a class="btn btn-social btn-fill btn-pinterest" target="_blank"
+           href="https://pinterest.com/pin/create/bookmarklet/?media={{ 'http://'|urlencode  }}{{ request.site }}{{ '/'|urlencode  }}{{ MEDIA_URL }}{{ 'uploads/melindro.png'|urlencode }}&amp;url={{ blog_post.short_url|urlencode }}&amp;description={{ blog_post.title|urlencode }}" >
+            <i class="fa fa-pinterest-p"></i>
+        </a>
+        <a class="btn btn-social btn-fill" target="_blank"
+           href="mailto:?subject={% trans 'I would like to share this:' %}%20{{ blog_post.title|urlencode }}&amp;body={% trans 'This is a interesting blog post:'%}%20{{ blog_post.title|urlencode }}%20{{ blog_post.short_url|urlencode }}">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block extra_js %}
+{% endblock %}

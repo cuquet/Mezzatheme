@@ -1,0 +1,20 @@
+{% load i18n %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% if settings.USE_MODELTRANSLATION and languages|length > 1 %}
+<div>
+<form action="{% url 'set_language' %}" method="post" id="language_selector_form">
+  {% csrf_token %}
+  <div class="form-group">
+    <select name="language" class="form-control selectpicker" data-style="btn btn-primary btn-fill btn-block">
+      {% for language in languages %}
+      <option value="{{ language.code }}"
+      {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
+      {{ language.name_local }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+  <input type="submit" class="btn bt-fill btn-default" value="{% trans 'Change' %}" />
+</form>
+</div>
+{% endif %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+<li>{{ title }}</li>
+{% endblock %}
+
+{# {% block mainbody %}
+{{ block.super }}
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %} #}
+
+{% block modal %}
+{% errors_for form %}
+<form role="form" class="form" method="post" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+    <fieldset>
+    <legend>{{ title }}<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></legend>
+    {% fields_for form %}
+    <div class="form-group form-actions">
+        {% block account_form_actions %}
+            <button class="btn btn-primary btn-fill" type="submit" >{{ title }}</button>
+        </div>
+        {% endblock %}
+    </div>
+    </fieldset>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+$('#AccountModal').modal().on('hidden.bs.modal', function (e) {
+    //parent.history.back();
+    window.location ='{{ request.GET.next }}';
+});
+</script>
+{% endblock %}

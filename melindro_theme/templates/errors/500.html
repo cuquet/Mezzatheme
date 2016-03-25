@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load i18n staticfiles %}
+
+{% block meta_title %}
+{% trans "Error" %}
+{% endblock %}
+
+{% block title %}
+{% trans "Error" %}
+{% endblock %}
+
+{% block navbarmenu %}
+<ul class="nav navbar-nav hidden-xs animated bounceInDown">
+{% include "includes/menu_dropdown_language.html" %}
+{% include "accounts/includes/menu_dropdown_user.html" %}
+</ul>
+<ul class="nav nav-pills nav-stacked visible-xs">
+{% include "includes/menu_dropdown_language.html" %}
+{% include "accounts/includes/menu_dropdown_user.html" %}
+</ul>
+{% endblock navbarmenu %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div id="top-panel" class="jumbotron">
+        <h1>Oops!</h1>
+        <div class="img-src">
+            <img src="{% static 'img/bg_404.png' %}" >
+        </div>
+        <h2 class="panel-title">{% trans "Error" %}</h2>
+        <div class="error-details">{% trans "Sorry, an error occurred." %}</div>
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span> {% trans "Take Me Home" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style type="text/css">
+h1, h2, h3, h4, h5, h6{
+    font-family:'Coustard', sans-serif;
+    font-weight:300;
+}
+#top-panel{
+    background: rgba(225, 225, 225, 0.9);
+    margin-top:20px;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.20)
+}
+#top-panel h1{color:#2d2d2d;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);}
+#top-panel p {font-size: 14px;}
+</style>
+{% endblock %}

@@ -1,0 +1,1210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mezzanine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-20 02:43+0100\n"
+"PO-Revision-Date: 2016-03-21 02:01+0100\n"
+"Last-Translator: Angel Calleja <cuquet@gmail.com>\n"
+"Language-Team: Catalan <LL@li.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+
+#: melindro/settings.py:115
+msgid "English"
+msgstr "Anglès"
+
+#: melindro/settings.py:116
+msgid "Catalan"
+msgstr "Català"
+
+#: melindro/settings.py:117
+msgid "Spanish"
+msgstr "Castellà"
+
+#: melindro_theme/templates/accounts/account_login.html:6
+#: templates/accounts/account_login.html:6
+msgid ""
+"You're already logged in. If you'd like to log in as a different user, "
+"you'll need to log out first."
+msgstr ""
+"Ja estàs connectat. Per iniciar la sessió com un usuari diferent,hauràs de "
+"sortir primer."
+
+#: melindro_theme/templates/accounts/account_login.html:11
+#: templates/accounts/account_login.html:11
+#, python-format
+msgid ""
+"If you don't have an account you can <a href=\"%(signup_url)s?next=%(next)s"
+"\">sign up</a> for one now."
+msgstr ""
+"Si no tens un compte pots <a href=\"%(signup_url)s?next=%(next)s"
+"\">inscriure’t</a> per a un ara."
+
+#: melindro_theme/templates/accounts/account_login.html:14
+#: templates/accounts/account_login.html:14
+#, python-format
+msgid ""
+"<p>You can also <a href=\"%(password_reset_url)s?next=%(profile_update_url)s"
+"\">reset your password</a> if you've forgotten it.</p>"
+msgstr ""
+"<p>També pots <a href=\"%(password_reset_url)s?next=%(profile_update_url)s"
+"\">restablir la teva contrasenya</a> si l'has oblidat.</p>"
+
+#: melindro_theme/templates/accounts/account_password_reset.html:6
+#: templates/accounts/account_password_reset.html:6
+msgid ""
+"Enter your username or email address and you'll receive an email with a link "
+"you need to click, in order to log in and change your password."
+msgstr ""
+"Introdueixi la teva adreça de e-mail o el teu nom d’usuari i rebràs un "
+"correu electrònic amb un enllaç on cal fer clic, per tal d’accedir i canviar "
+"la clau."
+
+#: melindro_theme/templates/accounts/account_profile.html:18
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:25
+#: melindro_theme/templates/accounts/includes/user_panel.html:11
+#: templates/accounts/account_profile.html:18
+#: templates/accounts/includes/menu_dropdown_user.html:25
+#: templates/accounts/includes/user_panel.html:11
+msgid "Update profile"
+msgstr "Actualitzar el perfil"
+
+#: melindro_theme/templates/accounts/account_signup.html:7
+#: templates/accounts/account_signup.html:7
+msgid ""
+"You're already logged in. If you'd like to create a new account, you'll need "
+"to log out first."
+msgstr ""
+"Ja t’has registrat. Si vols crear un compte nou, necessitaràs desconnectar "
+"primer."
+
+#: melindro_theme/templates/accounts/account_signup.html:11
+#: templates/accounts/account_signup.html:11
+msgid ""
+"After signing up, your account will be reviewed for approval. You'll receive "
+"an email when your account is activated."
+msgstr ""
+"Després de donar-se d’alta, el compte serà revisat per la seva aprovació. "
+"Rebreu un correu electrònic quan s’activi el compte."
+
+#: melindro_theme/templates/accounts/account_signup.html:13
+#: templates/accounts/account_signup.html:13
+msgid ""
+"After signing up, you'll receive an email with a link you need to click, in "
+"order to activate your account."
+msgstr ""
+"Després de registrar-te, rebràs un correu electrònic amb un enllaç on has de "
+"fer clic, per tal d'activar el teu compte."
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:5
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:9
+#: templates/accounts/includes/menu_dropdown_user.html:5
+#: templates/accounts/includes/menu_dropdown_user.html:9
+msgid "Users"
+msgstr "Usuaris"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:14
+#: templates/accounts/includes/menu_dropdown_user.html:14
+msgid "Administration"
+msgstr "Administració"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:19
+#: templates/accounts/includes/menu_dropdown_user.html:19
+msgid "Webmail"
+msgstr "Correu Web"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:21
+#: templates/accounts/includes/menu_dropdown_user.html:21
+msgid "Profilemanager"
+msgstr "Administrador de perfils"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:28
+#: melindro_theme/templates/accounts/includes/user_panel.html:17
+#: melindro_theme/templates/accounts/includes/user_panel_nav.html:11
+#: melindro_theme/templates/includes/editable_toolbar.html:9
+#: templates/accounts/includes/menu_dropdown_user.html:28
+#: templates/accounts/includes/user_panel.html:17
+#: templates/accounts/includes/user_panel_nav.html:11
+#: templates/includes/editable_toolbar.html:9
+msgid "Log out"
+msgstr "Tancar sessió"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:31
+#: melindro_theme/templates/accounts/includes/user_panel.html:20
+#: melindro_theme/templates/accounts/includes/user_panel_nav.html:14
+#: templates/accounts/includes/menu_dropdown_user.html:31
+#: templates/accounts/includes/user_panel.html:20
+#: templates/accounts/includes/user_panel_nav.html:14
+msgid "Log in"
+msgstr "Iniciar sessió"
+
+#: melindro_theme/templates/accounts/includes/menu_dropdown_user.html:33
+#: melindro_theme/templates/accounts/includes/user_panel.html:23
+#: melindro_theme/templates/accounts/includes/user_panel_nav.html:16
+#: templates/accounts/includes/menu_dropdown_user.html:33
+#: templates/accounts/includes/user_panel.html:23
+#: templates/accounts/includes/user_panel_nav.html:16
+msgid "Sign up"
+msgstr "Registrar-se"
+
+#: melindro_theme/templates/accounts/includes/user_panel.html:5
+#: templates/accounts/includes/user_panel.html:5
+msgid "Logged in as: "
+msgstr "Sessió iniciada com a:"
+
+#: melindro_theme/templates/accounts/includes/user_panel.html:21
+#: templates/accounts/includes/user_panel.html:21
+msgid "or"
+msgstr "o"
+
+#: melindro_theme/templates/base.html:85 templates/base.html.py:85
+msgid "Toggle Navigation"
+msgstr "Activar navegació"
+
+#: melindro_theme/templates/base.html:180 templates/base.html.py:180
+msgid "Up"
+msgstr "Amunt"
+
+#: melindro_theme/templates/base.html:187
+#: melindro_theme/templates/includes/menu_dropdown_language.html:8
+#: melindro_theme/templates/includes/menu_dropdown_language.html:11
+#: melindro_theme/templates/soon.html:132 templates/base.html.py:187
+#: templates/includes/menu_dropdown_language.html:8
+#: templates/includes/menu_dropdown_language.html:11 templates/soon.html:132
+msgid "Language"
+msgstr "Idioma"
+
+#: melindro_theme/templates/base.html:196 templates/base.html.py:196
+msgid "Main Menu"
+msgstr "Menu Principal"
+
+#: melindro_theme/templates/base.html:207
+#: melindro_theme/templates/soon.html:141 templates/base.html.py:207
+#: templates/soon.html:141
+msgid "Contact us"
+msgstr "Contacta amb nosaltres"
+
+#: melindro_theme/templates/base.html:208 templates/base.html.py:208
+msgid ""
+"Contact us through this\n"
+"                            <a href=\"/about/contact/\">form.</a>\n"
+"                            with any questions or suggestions.\n"
+"                            "
+msgstr ""
+"Contacta'ns amb aquest\n"
+"                <a href=\"/about/contact/\">formulari</a>\n"
+"                si tens cap questió o suggeriment.\n"
+"                "
+
+#: melindro_theme/templates/base.html:223 templates/base.html.py:223
+msgid "Follow or Share us"
+msgstr "Segueix-nos o comparteix"
+
+#: melindro_theme/templates/base.html:229 templates/base.html.py:229
+msgid "Share on Facebook"
+msgstr "Compartir a Facebook"
+
+#: melindro_theme/templates/base.html:234 templates/base.html.py:234
+msgid "Follow us on Twitter"
+msgstr "Segueix-nos a Twitter"
+
+#: melindro_theme/templates/base.html:239 templates/base.html.py:239
+msgid "Share on Google+"
+msgstr "Compartir a Google+"
+
+#: melindro_theme/templates/base.html:244 templates/base.html.py:244
+msgid "Share by e-mail"
+msgstr "Compartir per correu"
+
+#: melindro_theme/templates/base.html:259 templates/base.html.py:259
+msgid "Powered by"
+msgstr "Desenvolupat amb"
+
+#: melindro_theme/templates/base.html:262 templates/base.html.py:262
+msgid "and"
+msgstr "i"
+
+#: melindro_theme/templates/base.html:265 templates/base.html.py:265
+msgid "Theme by"
+msgstr "Tema basat en"
+
+#: melindro_theme/templates/base.html:268 templates/base.html.py:268
+msgid "View Mobile Site"
+msgstr "Veure versió mòbil"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:49
+#: templates/blog/blog_post_detail.html:49
+msgid "Posted by"
+msgstr "Publicat per"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:55
+#: melindro_theme/templates/generic/includes/comment.html:19
+#: melindro_theme/templates/generic/includes/comment.html:69
+#: melindro_theme/templates/twitter/tweets.html:19
+#: templates/blog/blog_post_detail.html:55
+#: templates/generic/includes/comment.html:19
+#: templates/generic/includes/comment.html:69 templates/twitter/tweets.html:19
+#, python-format
+msgid "%(sometime)s ago"
+msgstr "fa %(sometime)s"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:63
+#: melindro_theme/templates/blog/blog_post_list.html:112
+#: melindro_theme/templates/generic/includes/comments.html:4
+#: templates/blog/blog_post_detail.html:63
+#: templates/blog/blog_post_list.html:112
+#: templates/generic/includes/comments.html:4
+msgid "Comments"
+msgstr "Comentaris"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:69
+#: melindro_theme/templates/blog/blog_post_list.html:119
+#: templates/blog/blog_post_detail.html:69
+#: templates/blog/blog_post_list.html:119
+#, python-format
+msgid "%(comments_count)s comment"
+msgid_plural "%(comments_count)s comments"
+msgstr[0] "%(comments_count)s comentari"
+msgstr[1] "%(comments_count)s commentaris"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:120
+#: templates/blog/blog_post_detail.html:120
+msgid "Related posts"
+msgstr "Publicacions relacionades"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:157
+#: melindro_theme/templates/blog/blog_post_list.html:215
+#: templates/blog/blog_post_detail.html:157
+#: templates/blog/blog_post_list.html:215
+msgid "I would like to share this:"
+msgstr "M'agradaria compartir això"
+
+#: melindro_theme/templates/blog/blog_post_detail.html:157
+#: melindro_theme/templates/blog/blog_post_list.html:215
+#: templates/blog/blog_post_detail.html:157
+#: templates/blog/blog_post_list.html:215
+msgid "This is a interesting blog post:"
+msgstr "Aquí hi ha un article interessant:"
+
+#: melindro_theme/templates/blog/blog_post_list.html:4
+#: melindro_theme/templates/blog/blog_post_list.html:22
+#: templates/blog/blog_post_list.html:4 templates/blog/blog_post_list.html:22
+msgid "Blog"
+msgstr "Blog"
+
+#: melindro_theme/templates/blog/blog_post_list.html:47
+#: templates/blog/blog_post_list.html:47
+msgid "Tag:"
+msgstr "Etiqueta:"
+
+#: melindro_theme/templates/blog/blog_post_list.html:49
+#: templates/blog/blog_post_list.html:49
+msgid "Category:"
+msgstr "Categoria"
+
+#: melindro_theme/templates/blog/blog_post_list.html:53
+#: templates/blog/blog_post_list.html:53
+msgid "Author:"
+msgstr "Autor:"
+
+#: melindro_theme/templates/blog/blog_post_list.html:65
+#: templates/blog/blog_post_list.html:65
+msgid "Viewing posts tagged"
+msgstr "Visualitzant publicacions etiquetades"
+
+#: melindro_theme/templates/blog/blog_post_list.html:67
+#: templates/blog/blog_post_list.html:67
+msgid "Viewing posts for the category"
+msgstr "Visualitzant publicacions de la categoria"
+
+#: melindro_theme/templates/blog/blog_post_list.html:69
+#: templates/blog/blog_post_list.html:69
+msgid "Viewing posts from"
+msgstr "Visualitzant publicacions des de"
+
+#: melindro_theme/templates/blog/blog_post_list.html:72
+#: templates/blog/blog_post_list.html:72
+msgid "Viewing posts by"
+msgstr "Visualitzant publicacions de"
+
+#: melindro_theme/templates/blog/blog_post_list.html:104
+#: melindro_theme/templates/search_results.html:47
+#: templates/blog/blog_post_list.html:104 templates/search_results.html:47
+msgid "read more"
+msgstr "llegir més"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:6
+#: templates/blog/includes/filter_panel.html:6
+msgid "Recent Posts"
+msgstr "Publicacions Recents"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:27
+#: templates/blog/includes/filter_panel.html:27
+msgid "Archive"
+msgstr "Arxiu"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:43
+#: templates/blog/includes/filter_panel.html:43
+msgid "Categories"
+msgstr "Categories"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:56
+#: templates/blog/includes/filter_panel.html:56
+msgid "Tags"
+msgstr "Etiquetes"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:74
+#: templates/blog/includes/filter_panel.html:74
+msgid "Authors"
+msgstr "Autors"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:87
+#: templates/blog/includes/filter_panel.html:87
+msgid "Feeds"
+msgstr "Canals d'informació (Feeds)"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:89
+#: melindro_theme/templates/blog/includes/filter_panel.html:93
+#: melindro_theme/templates/blog/includes/filter_panel.html:97
+#: melindro_theme/templates/blog/includes/filter_panel.html:101
+#: templates/blog/includes/filter_panel.html:89
+#: templates/blog/includes/filter_panel.html:93
+#: templates/blog/includes/filter_panel.html:97
+#: templates/blog/includes/filter_panel.html:101
+msgid "RSS"
+msgstr "RSS"
+
+#: melindro_theme/templates/blog/includes/filter_panel.html:90
+#: melindro_theme/templates/blog/includes/filter_panel.html:94
+#: melindro_theme/templates/blog/includes/filter_panel.html:98
+#: melindro_theme/templates/blog/includes/filter_panel.html:102
+#: templates/blog/includes/filter_panel.html:90
+#: templates/blog/includes/filter_panel.html:94
+#: templates/blog/includes/filter_panel.html:98
+#: templates/blog/includes/filter_panel.html:102
+msgid "Atom"
+msgstr "Atom"
+
+#: melindro_theme/templates/email/account_approve.html:3
+#: melindro_theme/templates/email/account_approve.txt:3
+#: templates/email/account_approve.html:3 templates/email/account_approve.txt:3
+msgid "Hey there, a new account has been created and requires activation."
+msgstr "Ei, ha estat creat un nou compte i requereix activació."
+
+#: melindro_theme/templates/email/account_approve.html:5
+#: melindro_theme/templates/email/account_approve.txt:5
+#: templates/email/account_approve.html:5 templates/email/account_approve.txt:5
+msgid "Name"
+msgstr "Nom"
+
+#: melindro_theme/templates/email/account_approve.html:6
+#: melindro_theme/templates/email/account_approve.txt:6
+#: templates/email/account_approve.html:6 templates/email/account_approve.txt:6
+msgid "Email"
+msgstr "Correu electrònic"
+
+#: melindro_theme/templates/email/account_approve.html:11
+#: melindro_theme/templates/email/account_approve.txt:9
+#: melindro_theme/templates/email/signup_verify.html:4
+#: melindro_theme/templates/email/signup_verify.txt:4
+#: templates/email/account_approve.html:11
+#: templates/email/account_approve.txt:9 templates/email/signup_verify.html:4
+#: templates/email/signup_verify.txt:4
+msgid "Please use the link below to activate it."
+msgstr "Siusplau fes servir el següent enllaç per activar-ho."
+
+#: melindro_theme/templates/email/account_approve_subject.txt:2
+#: templates/email/account_approve_subject.txt:2
+msgid "An account requires activation"
+msgstr "Un compte requereix activació"
+
+#: melindro_theme/templates/email/account_approved.html:3
+#: melindro_theme/templates/email/account_approved.txt:3
+#: templates/email/account_approved.html:3
+#: templates/email/account_approved.txt:3
+msgid "Hey there, your account has been activated."
+msgstr "Ei, el teu compte ha estat activat."
+
+#: melindro_theme/templates/email/account_approved.html:4
+#: melindro_theme/templates/email/account_approved.txt:4
+#: templates/email/account_approved.html:4
+#: templates/email/account_approved.txt:4
+msgid "Please use the link below to log in."
+msgstr "Siusplau fes servir l'enllaç de sota per accedir."
+
+#: melindro_theme/templates/email/account_approved_subject.txt:2
+#: templates/email/account_approved_subject.txt:2
+msgid "Your account has been activated"
+msgstr "El teu compte ha estat activat"
+
+#: melindro_theme/templates/email/comment_notification.html:6
+#: templates/email/comment_notification.html:6
+msgid "A new comment has been posted on"
+msgstr "S’ha publicat un nou comentari a"
+
+#: melindro_theme/templates/email/comment_notification.html:10
+#: templates/email/comment_notification.html:10
+#, python-format
+msgid ""
+"\n"
+"    At %(submit_date)s %(user_name)s wrote:\n"
+"    "
+msgstr ""
+"\n"
+"    El %(submit_date)s en %(user_name)s va escriure:\n"
+"    "
+
+#: melindro_theme/templates/email/comment_notification.txt:7
+#: templates/email/comment_notification.txt:7
+#, python-format
+msgid ""
+"\n"
+"At %(submit_date)s %(user_name)s wrote:\n"
+msgstr ""
+"\n"
+"El %(submit_date)s en %(user_name)s va escriure:\n"
+
+#: melindro_theme/templates/email/password_reset_verify.html:3
+#: melindro_theme/templates/email/password_reset_verify.txt:3
+#: templates/email/password_reset_verify.html:3
+#: templates/email/password_reset_verify.txt:3
+msgid "Hey there, the password reset form was used for your account."
+msgstr ""
+"Ei, s'ha fet servir el formulari per restablir la clau amb el teu compte."
+
+#: melindro_theme/templates/email/password_reset_verify.html:4
+#: melindro_theme/templates/email/password_reset_verify.txt:4
+#: templates/email/password_reset_verify.html:4
+#: templates/email/password_reset_verify.txt:4
+msgid "Please use the link below to log in and update your password."
+msgstr ""
+"Siusplau fes servir el següent enllaç per accedir i canviar la teva clau."
+
+#: melindro_theme/templates/email/password_reset_verify.html:6
+#: melindro_theme/templates/email/password_reset_verify.txt:6
+#: templates/email/password_reset_verify.html:6
+#: templates/email/password_reset_verify.txt:6
+msgid ""
+"If you didn't request for your password to be reset, please ignore this "
+"email."
+msgstr ""
+"Si no has demanat reiniciar la teva clau, siusplau ignora aquest correu "
+"electrònic."
+
+#: melindro_theme/templates/email/password_reset_verify_subject.txt:2
+#: templates/email/password_reset_verify_subject.txt:2
+msgid "Reset your password"
+msgstr "Restablir la teva clau"
+
+#: melindro_theme/templates/email/signup_verify.html:3
+#: melindro_theme/templates/email/signup_verify.txt:3
+#: templates/email/signup_verify.html:3 templates/email/signup_verify.txt:3
+msgid "Hey there, thanks for creating your account."
+msgstr "Ei, gràcies per crear un compte."
+
+#: melindro_theme/templates/email/signup_verify_subject.txt:2
+#: templates/email/signup_verify_subject.txt:2
+msgid "Activate your account"
+msgstr "Activa el teu compte"
+
+#: melindro_theme/templates/errors/404.html:5
+#: melindro_theme/templates/errors/404.html:9
+#: melindro_theme/templates/errors/404.html:33 templates/errors/404.html:5
+#: templates/errors/404.html.py:9 templates/errors/404.html:33
+msgid "Page not found"
+msgstr "Pàgina no trobada"
+
+#: melindro_theme/templates/errors/404.html:36 templates/errors/404.html:36
+msgid ""
+"\n"
+"              <p>The page you requested could not be found, either contact "
+"your webmaster or try again. Use your browsers\n"
+"              <b>Back</b> button to navigate to the page you have prevously "
+"come from</p>\n"
+"              <p><b>Or you could just press this neat little button:</b></"
+"p>\n"
+"              "
+msgstr ""
+"\n"
+"                          <p>La pàgina sol·licitada no es va poder trobar, "
+"posa’t en contacte amb el teu administrador web o bé  torna-ho a provar. Fes "
+"servir el botó \n"
+"                          <b>Enrera</b> del teu navegador per anar a la "
+"pàgina prèvia.</p>\n"
+"                          <p><b>O bé podries pressionar aquest petit botó:</"
+"b></p>\n"
+"                          "
+
+#: melindro_theme/templates/errors/404.html:43
+#: melindro_theme/templates/errors/500.html:37 templates/errors/404.html:43
+#: templates/errors/500.html.py:37
+msgid "Take Me Home"
+msgstr "Porta’m a casa"
+
+#: melindro_theme/templates/errors/500.html:6
+#: melindro_theme/templates/errors/500.html:10
+#: melindro_theme/templates/errors/500.html:34 templates/errors/500.html:6
+#: templates/errors/500.html.py:10 templates/errors/500.html:34
+msgid "Error"
+msgstr "Error"
+
+#: melindro_theme/templates/errors/500.html:35 templates/errors/500.html:35
+msgid "Sorry, an error occurred."
+msgstr "Ho sento hi ha hagut un error."
+
+#: melindro_theme/templates/generic/includes/comment.html:27
+#: templates/generic/includes/comment.html:27
+msgid "Link"
+msgstr "Enllaç"
+
+#: melindro_theme/templates/generic/includes/comment.html:30
+#: melindro_theme/templates/generic/includes/comment.html:55
+#: templates/generic/includes/comment.html:30
+#: templates/generic/includes/comment.html:55
+msgid "Reply"
+msgstr "Respondre"
+
+#: melindro_theme/templates/generic/includes/comment.html:65
+#: templates/generic/includes/comment.html:65
+msgid "Comment deleted"
+msgstr "Comentari esborrat"
+
+#: melindro_theme/templates/generic/includes/comment.html:67
+#: templates/generic/includes/comment.html:67
+msgid "Comment awaiting approval"
+msgstr "El comentari està en espera d’aprobació."
+
+#: melindro_theme/templates/generic/includes/comment.html:81
+#: templates/generic/includes/comment.html:81
+msgid "There are currently no comments"
+msgstr "Actualment no hi ha comentaris"
+
+#: melindro_theme/templates/generic/includes/comments.html:25
+#: melindro_theme/templates/generic/includes/comments.html:37
+#: templates/generic/includes/comments.html:25
+#: templates/generic/includes/comments.html:37
+msgid "New Comment"
+msgstr "Nou comentari"
+
+#: melindro_theme/templates/generic/includes/comments.html:50
+#: templates/generic/includes/comments.html:50
+msgid "Comment"
+msgstr "Comentari"
+
+#: melindro_theme/templates/generic/includes/rating.html:5
+#: templates/generic/includes/rating.html:5
+msgid "Current rating"
+msgstr "Valoració actual"
+
+#: melindro_theme/templates/generic/includes/rating.html:7
+#: templates/generic/includes/rating.html:7
+msgid "Currently unrated"
+msgstr "Actualment sense valoració"
+
+#: melindro_theme/templates/generic/includes/rating.html:17
+#: templates/generic/includes/rating.html:17
+msgid "Rate"
+msgstr "Valoració"
+
+#: melindro_theme/templates/includes/editable_form.html:16
+#: templates/includes/editable_form.html:16
+msgid "Save"
+msgstr "Guardar"
+
+#: melindro_theme/templates/includes/editable_form.html:17
+#: templates/includes/editable_form.html:17
+msgid "Cancel"
+msgstr "Cancel.lar"
+
+#: melindro_theme/templates/includes/editable_form.html:25
+#: templates/includes/editable_form.html:25
+msgid "Edit"
+msgstr "Editar"
+
+#: melindro_theme/templates/includes/editable_toolbar.html:8
+#: templates/includes/editable_toolbar.html:8
+msgid "Admin"
+msgstr "Administració"
+
+#: melindro_theme/templates/includes/form_errors.html:8
+#: templates/includes/form_errors.html:8
+msgid "Please correct the errors below."
+msgstr "Si us plau, corregeix els següents errors."
+
+#: melindro_theme/templates/includes/language_selector.html:17
+#: templates/includes/language_selector.html:17
+msgid "Change"
+msgstr "Canvi"
+
+#: melindro_theme/templates/includes/menu_dropdown_search_form.html:6
+#: melindro_theme/templates/includes/menu_dropdown_search_form.html:11
+#: melindro_theme/templates/includes/search_form.html:4
+#: templates/includes/menu_dropdown_search_form.html:6
+#: templates/includes/menu_dropdown_search_form.html:11
+#: templates/includes/search_form.html:4
+msgid "Search"
+msgstr "Buscar"
+
+#: melindro_theme/templates/includes/menu_dropdown_search_form.html:20
+#: melindro_theme/templates/includes/search_form.html:13
+#: templates/includes/menu_dropdown_search_form.html:20
+#: templates/includes/search_form.html:13
+msgid "Everything"
+msgstr "Tot"
+
+#: melindro_theme/templates/includes/pagination.html:7
+#: templates/includes/pagination.html:7
+msgid "Page"
+msgstr "Pàgina"
+
+#: melindro_theme/templates/includes/pagination.html:7
+#: templates/includes/pagination.html:7
+msgid "of"
+msgstr "de"
+
+#: melindro_theme/templates/includes/search_form.html:26
+#: templates/includes/search_form.html:26
+msgid "Go"
+msgstr "Ves-hi"
+
+#: melindro_theme/templates/index.html:4 melindro_theme/templates/index.html:5
+#: melindro_theme/templates/index.html:12
+#: melindro_theme/templates/pages/menus/breadcrumb.html:4
+#: melindro_theme/templates/pages/menus/breadcrumb.html:10
+#: melindro_theme/templates/pages/menus/dropdown.html:10
+#: melindro_theme/templates/pages/menus/dropdown.html:11
+#: melindro_theme/templates/pages/menus/footer_tree.html:12
+#: melindro_theme/templates/pages/menus/mobile.html:10
+#: melindro_theme/templates/pages/menus/primary.html:8
+#: melindro_theme/templates/pages/menus/tree.html:9
+#: melindro_theme/templates/search_results.html:13 templates/index.html.py:4
+#: templates/index.html:5 templates/index.html.py:12
+#: templates/pages/menus/breadcrumb.html:4
+#: templates/pages/menus/breadcrumb.html:10
+#: templates/pages/menus/dropdown.html:10
+#: templates/pages/menus/dropdown.html:11
+#: templates/pages/menus/footer_tree.html:12
+#: templates/pages/menus/mobile.html:10 templates/pages/menus/primary.html:8
+#: templates/pages/menus/tree.html.py:9 templates/search_results.html:13
+msgid "Home"
+msgstr "Inici"
+
+#: melindro_theme/templates/index.html:16 templates/index.html.py:16
+msgid ""
+"\n"
+"<h2>Congratulations!</h2>\n"
+"<p>\n"
+"    Welcome to your new Mezzanine powered website.\n"
+"    Here are some quick links to get you started:\n"
+"</p>\n"
+"<ul>\n"
+"    <li><a href=\"/admin/\">Log in to the admin interface</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/content-architecture.html"
+"\">Creating custom page types</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#templates\">Modifying HTML templates</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin"
+"\">Changing this homepage</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html\">Other frequently asked questions</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/configuration.html#default-"
+"settings\">Full list of settings</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/deployment.html\">Deploying "
+"to a production server</a></li>\n"
+"</ul>\n"
+msgstr ""
+"\n"
+"<h2>Felicitats!</h2>\n"
+"<p>\n"
+"    Benvingut al teu nou lloc web proporcionat per Mezzanine.\n"
+"    Aquests són alguns enllaços ràpids per començar:\n"
+"</p>\n"
+"<ul>\n"
+"    <li><a href=\"/admin/\">Inicieu sessió a la interfície d'administració</"
+"a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/content-architecture.html"
+"\">Creació de tipus de pàgina personalitzats</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#templates\">Modificació de plantilles HTML</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin\">Canviar "
+"aquesta pàgina</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/frequently-asked-questions."
+"html\">Altres preguntes freqüents</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/configuration.html#default-"
+"settings\">Llista complerta de la configuració</a></li>\n"
+"    <li><a href=\"http://mezzanine.jupo.org/docs/deployment.html"
+"\">Implementació en un servidor de producció</a></li>\n"
+"</ul>\n"
+
+#: melindro_theme/templates/pages/form.html:26 templates/pages/form.html:26
+msgid "Submit"
+msgstr "Enviar"
+
+#: melindro_theme/templates/pages/menus/admin.html:31
+#: templates/pages/menus/admin.html:31
+msgid "Add"
+msgstr "Afegir"
+
+#: melindro_theme/templates/search_results.html:5
+#: melindro_theme/templates/search_results.html:6
+#: melindro_theme/templates/search_results.html:15
+#: templates/search_results.html:5 templates/search_results.html.py:6
+#: templates/search_results.html:15
+msgid "Search Results"
+msgstr "Resultats de la recerca"
+
+#: melindro_theme/templates/search_results.html:22
+#: templates/search_results.html:22
+#, python-format
+msgid ""
+"\n"
+"No results were found in %(search_type)s matching your query: %(query)s\n"
+msgstr ""
+"\n"
+"No s'han trobat resultats a %(search_type)s que coincideixin amb la teva "
+"consulta: %(query)s\n"
+
+#: melindro_theme/templates/search_results.html:26
+#: templates/search_results.html:26
+#, python-format
+msgid ""
+"\n"
+"Showing %(start)s to %(end)s of %(total)s results in %(search_type)s "
+"matching your query: %(query)s\n"
+msgstr ""
+"\n"
+"Mostrant de %(start)s a %(end)s dels resultats %(total)s a %(search_type)s "
+"que coincideixin amb la teva consulta: %(query)s\n"
+
+#: melindro_theme/templates/soon.html:4 templates/soon.html.py:4
+msgid "Coming Soon/Under Construction"
+msgstr "Tornarem aviat/En construcció"
+
+#: melindro_theme/templates/soon.html:5 templates/soon.html.py:5
+msgid "See Soon! Coming Soon/Under Construction"
+msgstr "Ens veiem aviat! Tornarem aviat/En construcció"
+
+#: melindro_theme/templates/soon.html:40 templates/soon.html.py:40
+msgid ""
+"\n"
+"                    <h2>Soon there will be something different</h2>\n"
+"                    <p>We are building something very cool. Stay tuned and "
+"be patient. Your patience will be well paid.</p>\n"
+msgstr ""
+"\n"
+"                    <h2>Aviat hi haurà quelcom diferent</h2>\n"
+"                    <p>Construïm alguna cosa fresca. Estigues atent i sigues "
+"pacient. La teva paciència obtindrà recompensa.</p>\n"
+
+#: melindro_theme/templates/soon.html:73 templates/soon.html.py:73
+msgid ""
+"\n"
+"                <p>This is a personal blog where I write what I find useful "
+"or interesting. I like the computer is my hobby.\n"
+"                </p>\n"
+msgstr ""
+"\n"
+"                <p>Això és un blog personal on escric allò que trobo útil o "
+"interessant. M'agrada la informàtica, és la meva afició.\n"
+"                </p>\n"
+
+#: melindro_theme/templates/soon.html:87 templates/soon.html.py:87
+msgid ""
+"\n"
+"                        <h4>OS X</h4>\n"
+"                        <p>A series of resources related to the world OS X. "
+"From server applications to the command line.</p>\n"
+msgstr ""
+"\n"
+"                    <h4>OS X</h4>\n"
+"                    <p>Un seguit de recursos relacionats amb el món OS X. "
+"Des de aplicacions de servidor fins a la linia d'ordres al terminal.</p>\n"
+
+#: melindro_theme/templates/soon.html:102 templates/soon.html.py:102
+msgid ""
+"\n"
+"                        <h4>Linux (CenOS)</h4>\n"
+"                        <p>Related to this wonderful operating system. There "
+"was much stuck until I discover OS X.</p>\n"
+msgstr ""
+"\n"
+"                    <h4>Linux (CenOS)</h4>\n"
+"                    <p>Temes relacionats a aquest meravellós sistema "
+"operatiu. Hi estava molt enganxat fins que vaig descubrir OS X.</p>\n"
+
+#: melindro_theme/templates/soon.html:117 templates/soon.html.py:117
+msgid ""
+"\n"
+"                        <h4>Other topics</h4>\n"
+"                        <p>Unix is not everything in life, maybe I can also "
+"write about something else ...and even share any file.</p>\n"
+msgstr ""
+"\n"
+"                    <h4>Altres</h4>\n"
+"                    <p>Unix no ho és tot a la vida, potser també puc "
+"escriure  sobre alguna cosa més... i fins i tot compartir algun fitxer.</p>\n"
+
+#: melindro_theme/templates/soon.html:142 templates/soon.html.py:142
+msgid ""
+"Contact us through this\n"
+"                <a href=\"/about/contact/\">form.</a>\n"
+"                with any questions or suggestions.\n"
+"                "
+msgstr ""
+"Contacta'ns amb aquest\n"
+"                <a href=\"/about/contact/\">formulari</a>\n"
+"                si tens cap questió o suggeriment.\n"
+"                "
+
+#: melindro_theme/templates/twitter/tweets.html:7
+#: templates/twitter/tweets.html:7
+msgid "Recent Tweets"
+msgstr "Tweets recents"
+
+#: templates/admin/base_site.html:19
+msgid "View site"
+msgstr "Veure lloc web"
+
+#: templates/admin/forms/change_form.html:5
+#: templates/admin/forms/entries.html:57
+msgid "View entries"
+msgstr "Veure les entrades"
+
+#: templates/admin/forms/entries.html:28
+msgid "Field"
+msgstr " Camp"
+
+#: templates/admin/forms/entries.html:29
+msgid "Include"
+msgstr "Incluir"
+
+#: templates/admin/forms/entries.html:30
+msgid "Filter by"
+msgstr "Filtrar per"
+
+#: templates/admin/forms/entries.html:48
+msgid "All"
+msgstr "Tot/es"
+
+#: templates/admin/forms/entries.html:56 templates/admin/forms/entries.html:93
+msgid "Back to form"
+msgstr "Tornar al formul.lari"
+
+#: templates/admin/forms/entries.html:58
+msgid "Export CSV"
+msgstr "Exportar com a CSV"
+
+#: templates/admin/forms/entries.html:60
+msgid "Entries"
+msgstr "Entrades"
+
+#: templates/admin/forms/entries.html:94
+msgid "Delete selected"
+msgstr "Comentari esborrat"
+
+#: templates/admin/forms/entries.html:98
+msgid "No entries to display"
+msgstr "No hi han entrades per mostrar"
+
+#: templates/admin/includes/dynamic_inline_stacked.html:6
+#: templates/admin/includes/dynamic_inline_tabular.html:6
+msgid "Add another"
+msgstr "Afegir un altre"
+
+#: templates/admin/includes/quick_blog.html:18
+msgid "Quick Blog"
+msgstr "Blog ràpid"
+
+#: templates/admin/includes/quick_blog.html:27
+msgid "Save Draft"
+msgstr "Guardar esborrany"
+
+#: templates/admin/includes/recent_actions.html:4
+msgid "Recent Actions"
+msgstr "Publicacions Recents"
+
+#: templates/admin/includes/recent_actions.html:5
+msgid "My Actions"
+msgstr "Les meves accions"
+
+#: templates/admin/includes/recent_actions.html:9
+msgid "None available"
+msgstr "Cap disponible"
+
+#: templates/admin/includes/recent_comments.html:4
+msgid "Recent Comments"
+msgstr "Publicacions Recents"
+
+#: templates/admin/index.html:17
+msgid "Dashboard"
+msgstr "Panell de control"
+
+#: templates/admin/login.html:24
+msgid "You don't have permission to access the admin for this site."
+msgstr "No tens permisos per accedir a l'administració d'aquest lloc web."
+
+#: templates/admin/login.html:31
+msgid "Username or email:"
+msgstr "Nom d'usuari o e-mail"
+
+#: templates/admin/login.html:35
+msgid "Password:"
+msgstr "Clau:"
+
+#: templates/admin/login.html:53
+msgid "Interface:"
+msgstr "Interfície:"
+
+#: templates/admin/login.html:59
+msgid "Site"
+msgstr "Lloc Web"
+
+#: templates/admin/login.html:66
+msgid "Forgot password?"
+msgstr "Clau oblidada?"
+
+#: templates/admin/profile_inline.html:10
+msgid "Profile information"
+msgstr "Administrador de perfils"
+
+# ## Accounts #####################################
+#: defaults.py:20
+msgid "Minimum length for passwords"
+msgstr "Longitud mínima per a les contrasenyes"
+
+#: defaults.py:27
+msgid ""
+"If ``True``, the username field will be excluded from sign up and account "
+"update forms."
+msgstr ""
+"Si ``True``, el camp de nom d'usuari serà exclòs del registre i del "
+"formulari d'actualització de comptes."
+
+#: defaults.py:35
+msgid "List of fields to exclude from the profile form."
+msgstr "Llistat de camps a excloure del perfil d’usuari."
+
+#: defaults.py:42
+msgid ""
+"Dotted package path and class name of profile form to use for users signing "
+"up and updating their profile, when ``mezzanine.accounts`` is installed."
+msgstr ""
+"Ruta del paquet i nom de la classe del formulari de perfil que s’usa per "
+"registrar als usuaris  i actualitzar el seu perfil, quan s'instal·la "
+"``mezzanine.accounts``."
+
+#: defaults.py:51
+msgid "If ``True``, users will have their own public profile pages."
+msgstr ""
+"Si ``True`` , els usuaris tindran les seves pròpies pàgines de perfil públic."
+
+#: defaults.py:59
+msgid ""
+"If ``True``, when users create an account, they will be sent an email with a "
+"verification link, which they must click to enable their account."
+msgstr ""
+"Si ``True``, quan els usuaris creiïn un compte,  se'ls enviarà un correu "
+"electrònic amb un enllaç de verificació, on hauran de fer clic per activar "
+"el seu compte."
+
+#: defaults.py:68
+msgid ""
+"If ``True``, when users create an account, they will not be enabled by "
+"default and a staff member will need to activate their account in the admin "
+"interface."
+msgstr ""
+"Si ``True``, quan els usuaris creiïn un compte , no s’activarà per defecte i "
+"un membre del personal haurà d'activar-lo a la interfície d'administració."
+
+#: defaults.py:77
+msgid "Account approval email addresses"
+msgstr "Adreces de correu electrònic d'aprovació de comptes"
+
+#: defaults.py:78
+msgid ""
+"A comma separated list of email addresses that will receive an email "
+"notification each time a new account is created that requires approval."
+msgstr ""
+"Una llista separada per comes de les adreces de correu que rebran una "
+"notificació cada vegada que es crea un nou compte que requereix l'aprovació."
+
+#: forms.py:29
+msgid "Email address"
+msgstr "Adreça de correu electrònic"
+
+#: forms.py:31
+msgid "Username or email address"
+msgstr "Nom d'usuari o adreça de correu electrònic"
+
+#: forms.py:39 forms.py:71
+msgid "Password"
+msgstr "Contrasenya"
+
+#: forms.py:52
+msgid "Invalid username/email and password"
+msgstr "Nom d'usuari/correu electrònic i contrasenya no vàlids "
+
+#: forms.py:54
+msgid "Your account is inactive"
+msgstr "El teu compte està desactivat"
+
+#: forms.py:73
+msgid "Password (again)"
+msgstr "Contrasenya (de nou)"
+
+#: forms.py:87
+msgid "Only letters, numbers, dashes or underscores please"
+msgstr "Només lletres, números, guions o guions baixos siusplau"
+
+#: forms.py:103
+msgid "Leave blank unless you want to change your password"
+msgstr "Deixa-ho en blanc si no és que vols canviar la contrasenya"
+
+#: forms.py:122
+msgid "Username can only contain letters, numbers, dashes or underscores."
+msgstr ""
+"El nom d'usuari només pot contenir lletres, nombres, guions o guions baixos."
+
+#: forms.py:129
+msgid "This username is already registered"
+msgstr "Aquest nom d’usuari ja ha estat registrat"
+
+#: forms.py:142
+msgid "Passwords do not match"
+msgstr "Les contrasenyes no coincideixen"
+
+#: forms.py:144
+#, python-format
+msgid "Password must be at least %s characters"
+msgstr "La contrasenya ha de tenir %s caràcters com a mínim"
+
+#: forms.py:158
+msgid "This email is already registered"
+msgstr "Aquest correu electrònic ja està registrat"
+
+#: forms.py:224
+msgid "Invalid username/email"
+msgstr "Usuari/correu no vàlid"
+
+#: views.py:29
+msgid "Successfully logged in"
+msgstr "Has accedit amb èxit"
+
+#: views.py:41
+msgid "Successfully logged out"
+msgstr "Has sortint correctament"
+
+#: views.py:56
+msgid ""
+"Thanks for signing up! You'll receive an email when your account is "
+"activated."
+msgstr ""
+"Gràcies per registrar-te ! Rebràs un correu electrònic quan s'activi el teu "
+"compte."
+
+#: views.py:60
+msgid ""
+"A verification email has been sent with a link for activating your account."
+msgstr ""
+"Ha estat enviat un missatge de verificació amb un enllaç per activar el teu "
+"compte."
+
+#: views.py:64 views.py:83
+msgid "Successfully signed up"
+msgstr "T’has registrat amb èxit"
+
+#: views.py:86 views.py:153
+msgid "The link you clicked is no longer valid."
+msgstr "L'enllaç on has fet clic ja no és vàlid."
+
+#: views.py:127
+msgid "Profile updated"
+msgstr "Perfil actualitzat"
+
+#: views.py:132
+msgid "Update Profile"
+msgstr "Actualitzar el perfil"
+
+#: views.py:141
+msgid ""
+"A verification email has been sent with a link for resetting your password."
+msgstr ""
+"Ha estat enviat un missatge de verificació amb un enllaç per restablir la "
+"contrasenya."
+
+#: views.py:143
+msgid "Password Reset"
+msgstr "Restablir contrasenya"
+
+# ## Blog ##########################
+#: admin.py:20
+msgid "Other posts"
+msgstr "Altres entrades"
+
+#: defaults.py:21
+msgid "Enable featured images in blog posts"
+msgstr "Activa imatges destacades a les entrades del bloc"
+
+#: defaults.py:36
+msgid "Blog post URL date format"
+msgstr "Format de la data de la publicació de la URL del bloc"
+
+#: defaults.py:37
+msgid ""
+"A string containing the value ``year``, ``month``, or ``day``, which "
+"controls the granularity of the date portion in the URL for each blog post. "
+"Eg: ``year`` will define URLs in the format /blog/yyyy/slug/, while ``day`` "
+"will define URLs with the format /blog/yyyy/mm/dd/slug/. An empty string "
+"means the URLs will only use the slug, and not contain any portion of the "
+"date at all."
+msgstr ""
+"Una cadena que conté el valor ``year``, ``month``, o ``day``, que controla "
+"el nivell de detall de la part de la data a la URL per a cada entrada al "
+"bloc . Per exemple : ``year`` definirà les adreces URL en el format / bloc / "
+"yyyy / slug/ , mentre que ``day`` definirà les URL amb el format / bloc / "
+"yyyy / mm / dd / slug / . Una cadena buida vol dir que les URL s'utilitzaran "
+"només el slug , i no contindrà cap part de la data en absolut."
+
+#: defaults.py:49
+msgid "Blog posts per page"
+msgstr "Entrades per pàgina"
+
+#: defaults.py:50
+msgid "Number of blog posts shown on a blog listing page."
+msgstr "Nombre d'entrades del bloc que es mostrarar a la llista."
+
+#: defaults.py:57
+msgid "Blog posts RSS limit"
+msgstr "Límit RSS de l’entrada"
+
+#: defaults.py:58
+msgid ""
+"Number of most recent blog posts shown in the RSS feed. Set to ``None`` to "
+"display all blog posts in the RSS feed."
+msgstr ""
+"Número de les entrades més recents del blog que es mostren a la font RSS. "
+"Estableix ``None`` si vols visualitzar totes les entrades del bloc al canal "
+"RSS."
+
+#: defaults.py:66
+msgid "Slug of the page object for the blog."
+msgstr "Descripció reduida de l'objecte pàgina del bloc."
+
+#: models.py:19
+msgid "Allow comments"
+msgstr "Permetre Comentaris"
+
+#: models.py:22
+msgid "Rating"
+msgstr "Rating"

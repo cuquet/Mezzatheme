@@ -1,0 +1,36 @@
+{% load mezzanine_tags staticfiles accounts_tags i18n %}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle hidden-xs" role="button">
+        <i class="pe-7s-users"></i>
+        <p>{% if request.user.is_authenticated %}<span class="label label-fill label-success">{{ request.user|username_or:"email" }}</span>{% else %}{% trans "Users" %}{% endif %}<span class="caret"></span></p>
+    </a>
+    <a href="#" class="dropdown-toggle visible-xs" role="button">
+        <i class="pe-7s-users"></i>&nbsp;
+        {% if request.user.is_authenticated %}<span class="label label-fill label-success">{{ request.user|username_or:"email" }}</span>{% else %}{% trans "Users" %}{% endif %}<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+    {% if user.is_staff %}
+      <li role="presentation"><a href="/admin">
+          <i class="pe-7s-tools pe-va pe-fw "></i>{% trans "Administration" %}</a>
+      </li>
+      <li class="divider"></li>
+    {% endif %}
+      <li role="presentation"><a href="https://www.melindro.org/webmail">
+          <i class="pe-7s-mail pe-va pe-fw"></i>{% trans "Webmail" %}</a></li>
+      <li role="presentation"><a href="https://www.melindro.org/profilemanager">
+          <i class="pe-7s-users pe-va pe-fw"></i>{% trans "Profilemanager" %}</a></li>
+      <li class="divider"></li>
+      {% if request.user.is_authenticated %}
+        <li role="presentation"><a href="{% url 'profile_update' %}?next={{ request.path }}">
+            <i class="pe-7s-config pe-va pe-fw"></i>{% trans "Update profile" %}</a></li>
+        <li class="divider"></li>
+        <li role="presentation"><a href="{% url 'logout' %}?next={{ request.path }}">
+            <i class="pe-7s-close-circle pe-va pe-fw"></i>{% trans "Log out" %}</a></li>
+      {% else %}
+        <li role="presentation"><a href="{% url 'login' %}?next={{ request.path }}">
+            <i class="pe-7s-upload pe-rotate-90 pe-va pe-fw"></i>{% trans "Log in" %}</a></li>
+        <li role="presentation"><a href="{% url 'signup' %}?next={{ request.path }}">
+            <i class="pe-7s-add-user pe-va pe-fw"></i>{% trans "Sign up" %}</a></li>
+      {% endif %}
+    </ul>
+</li>

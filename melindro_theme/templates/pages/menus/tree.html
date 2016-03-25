@@ -1,0 +1,28 @@
+{% load i18n pages_tags %}
+
+{% spaceless %}
+{% if page_branch_in_menu %}
+<ul class="nav navlist-menu-level-{{ branch_level }} {% if branch_level == 0 %} nav-pills nav-stacked {% else %} dropdown-menu {% endif %}">
+  {% for page in page_branch %}
+  {% if not has_home and page.is_primary and forloop.first %}
+  <li{% if on_home %} class="active"{% endif %} id="tree-menu-home">
+    <a href="{% url "home" %}">{% trans "Home" %}</a>
+  </li>
+  {% endif %}
+  {% if page.in_menu %}
+  <li class="
+    {% if page.is_current %} active{% endif %}
+    {% if page.is_current_or_ascendant %} active-branch{% endif %}
+    {% if page.has_children_in_menu %} dropdown{% endif %}
+    " id="tree-menu-{{ page.html_id }}">
+    <a {% if page.has_children_in_menu %} class="dropdown-toggle disabled" data-toggle="dropdown" role="presentation" aria-haspopup="false" {% endif %} href="{{ page.get_absolute_url }}">
+        {{ page.title }} {% if page.has_children_in_menu %}<span class="caret"></span>{% endif %}</a>
+    {# wrap the next line with 'if page.is_current_or_ascendant' #}
+    {# to only show child pages in the menu for the current page #}
+    {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
+{% endspaceless %}

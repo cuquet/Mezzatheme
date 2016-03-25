@@ -1,0 +1,105 @@
+{% extends "pages/page.html" %}
+{% load mezzanine_tags staticfiles %}
+
+{% block extra_css %}
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="{% static 'fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet" href="{% static 'fancybox/helpers/jquery.fancybox-buttons.css' %}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{% static 'fancybox/helpers/jquery.fancybox-thumbs.css' %}" type="text/css" media="screen" />
+{% endblock extra_css %}
+
+{% block left_wrapper %}
+{% endblock %}
+<div class="col-md-{% block main_col_size %}12{% endblock %}">
+{% block main %}
+{{ block.super }}
+
+{% editable page.gallery.content %}
+{{ page.gallery.content|richtext_filters|safe }}
+{% endeditable %}
+{% with page.gallery.images.all as images %}
+<div class="row">
+	<div class="col-lg-12">
+		<div class="row">
+			<section id="projects">
+				<div class="polaroid-images">
+					{% for image in images %}
+					<!--<div class="item-thumbs">-->
+						<a class="fancybox-button" rel="fancybox-button" href="{{ image.file.url }}" title="{{ image.description }}">
+						<img alt="{{ image.description }}" src="{{ MEDIA_URL }}{% thumbnail image.file 0 100 %}">
+                        <div class="content hidden">
+                            <p>{{ image.description }}</p>
+                        </div>
+                        </a>
+					<!--</div>-->
+					{% endfor %}
+				</div>
+			</section>
+		</div>		
+	</div>
+</div>
+{% endwith %}
+{% endblock %}
+</div>
+{% block right_wrapper %}
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="{% static 'fancybox/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+<!-- Add fancyBox -->
+<script type="text/javascript" src="{% static 'fancybox/jquery.fancybox.pack.js' %}"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<script type="text/javascript" src="{% static 'fancybox/helpers/jquery.fancybox-buttons.js' %}"></script>
+<script type="text/javascript" src="{% static 'fancybox/helpers/jquery.fancybox-media.js' %}"></script>
+<script type="text/javascript" src="{% static 'fancybox/helpers/jquery.fancybox-thumbs.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+(function ($, F) {
+    F.transitions.resizeIn = function() {
+        var previous = F.previous,
+            current  = F.current,
+            startPos = previous.wrap.stop(true).position(),
+            endPos   = $.extend({opacity : 1}, current.pos);
+
+        startPos.width  = previous.wrap.width();
+        startPos.height = previous.wrap.height();
+
+        previous.wrap.stop(true).trigger('onReset').remove();
+
+        delete endPos.position;
+
+        current.inner.hide();
+
+        current.wrap.css(startPos).animate(endPos, {
+            duration : current.nextSpeed,
+            easing   : current.nextEasing,
+            step     : F.transitions.step,
+            complete : function() {
+                F._afterZoomIn();
+
+                current.inner.fadeIn("fast");
+            }
+        });
+    };
+
+}(jQuery, jQuery.fancybox));
+$(".fancybox-button")
+    .attr('rel', 'gallery')
+    .fancybox({
+		prevEffect		: 'none',
+		nextEffect		: 'none',
+        nextMethod : 'resizeIn',
+        nextSpeed  : 250,
+        prevMethod : false,
+		closeBtn		: false,
+		helpers		: {
+			title	: { type : 'inside' },
+			buttons	: {}
+		}
+    });
+});
+</script>
+{% endblock %}

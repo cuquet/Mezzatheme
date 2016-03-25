@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags staticfiles %}
+
+{% block meta_title %}{% trans "Coming Soon/Under Construction" %}{% endblock %}
+{% block title %}{% trans "See Soon! Coming Soon/Under Construction" %}{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/soon.css' %}" rel="stylesheet" type='text/css'>
+{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block navbarlogo %}
+{% endblock navbarlogo %}
+
+{% block navbarmenu %}
+<ul class="nav navbar-nav navbar-right">
+{% include "includes/menu_dropdown_language.html" %}
+{% include "accounts/includes/menu_dropdown_user.html" %}
+</ul>
+{% endblock navbarmenu %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block parallax_text %}
+    <div class="parallax filter-black">
+        <div class="parallax-image">
+            <img src="{% static 'img/bg_soon.jpg' %}">
+        </div>
+        <div id="parallax_header" class="small-info ">
+            <div class="container">
+                <div class="hexagon" >
+                    <div class="logo">
+                        <img class="img-circle" src="{% static 'img/logo_d_max.png' %}" style="width: 90px; height: 90px;">
+                    </div>
+                </div>
+                <div class="main-head">
+{% blocktrans %}
+                    <h2>Soon there will be something different</h2>
+                    <p>We are building something very cool. Stay tuned and be patient. Your patience will be well paid.</p>
+{% endblocktrans %}
+                </div>
+            </div>
+            <div id="countdown-area">
+                <ul class="countdown">
+                    <li><span class="days">00</span>
+                        <p class="days_ref">days</p>
+                    </li>
+                    <li><span class="hours">00</span>
+                        <p class="hours_ref">hours</p>
+                    </li>
+                    <li><span class="minutes">00</span>
+                        <p class="minutes_ref">minutes</p>
+                    </li>
+                    <li><span class="seconds">00</span>
+                        <p class="seconds_ref">seconds</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block mainbody %}
+<section id="services">
+        <div class="container">
+            <div class="main-head row">
+                <div class="col-md-10 col-md-offset-1">
+                <h1>{{ settings.SITE_TITLE }}
+                {% if settings.SITE_TAGLINE %}<small class="subtitle">{{ settings.SITE_TAGLINE }}</small>{% endif%}</h1>
+{% blocktrans %}
+                <p>This is a personal blog where I write what I find useful or interesting. I like the computer is my hobby.
+                </p>
+{% endblocktrans %}
+                </div>
+            </div>
+            <div id="services-blocks" class="row">
+                <div id="osx" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                    <div class="card card-user">
+                        <div class="content">
+                            <div class="author">
+                                <img src="{% static 'img/osx.png' %}" alt="osx" class="avatar">
+                            </div>
+                            <div class="text-center">
+{% blocktrans %}
+                        <h4>OS X</h4>
+                        <p>A series of resources related to the world OS X. From server applications to the command line.</p>
+{% endblocktrans %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="linux" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                    <div class="card card-user">
+                        <div class="content">
+                            <div class="author">
+                                <img src="{% static 'img/tux.png' %}" alt="tux" class="avatar">
+                            </div>
+                            <div class="text-center">
+{% blocktrans %}
+                        <h4>Linux (CenOS)</h4>
+                        <p>Related to this wonderful operating system. There was much stuck until I discover OS X.</p>
+{% endblocktrans %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="terminal" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sblock">
+                    <div class="card card-user">
+                        <div class="content">
+                            <div class="author">
+                                <img src="{% static 'img/terminal.png' %}" alt="terminal" class="img-rounded">
+                            </div>
+                            <div class="text-center">
+{% blocktrans %}
+                        <h4>Other topics</h4>
+                        <p>Unix is not everything in life, maybe I can also write about something else ...and even share any file.</p>
+{% endblocktrans %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock mainbody %}
+
+{% block footermenu%}
+<div id="footer1" class="col-md-2 col-md-offset-1">
+    <h5 class="title">{% trans "Language" %}</h5>
+    {% include "includes/language_selector.html" %}
+</div>
+<div id="footer2" class="col-md-3 col-md-offset-2">
+    <div class="info info-horizontal">
+        <div class="icon icon-sm">
+                <i class="fa fa-envelope"></i>
+        </div>
+        <div class="description">
+            <h5 class="title">{% trans "Contact us" %}</h5>
+            <p>{% blocktrans %}Contact us through this
+                <a href="/about/contact/">form.</a>
+                with any questions or suggestions.
+                {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock footermenu%}
+
+{% block extra_js %}
+<!--<script src="{% static 'js/jquery.backstretch.min.js' %}" type="text/javascript"></script>-->
+<script src="{% static 'js/scrollreveal.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/jquery.downCount.js' %}" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+$('div').each(function(){
+    if($(this).hasClass('section')) {
+        $(this).addClass('section-gray');
+    }
+});
+// scroll reveal
+	window.sr = ScrollReveal({easing:'ease-in-out'})
+    .reveal('.hexagon', {origin:'top',distance:'50px',duration:1200})
+    .reveal('#parallax_header .main-head h2', {origin:'left',distance:'50px',duration:1800})
+    .reveal('#parallax_header .main-head p', {origin:'right',distance:'50px',duration:2000})
+    .reveal('.days', {origin:'bottom',distance:'20px',duration:1200})
+    .reveal('.days_ref', {origin:'top',distance:'20px',duration:1400})
+    .reveal('.hours', {origin:'bottom',distance:'20px',duration:1600})
+    .reveal('.hours_ref', {origin:'top',distance:'20px',duration:1800})
+    .reveal('.minutes', {origin:'bottom',distance:'20px',duration:2000})
+    .reveal('.minutes_ref', {origin:'top',distance:'20px',duration:2200})
+    .reveal('.seconds', {origin:'bottom',distance:'20px',duration:2400})
+    .reveal('.seconds_ref', {origin:'top',distance:'20px',duration:2600});
+    sr.reveal('#services .main-head h1', {origin:'top',distance:'50px',duration:1200})
+    .reveal('#services .main-head p', {origin:'bottom',distance:'50px',duration:1400})
+    .reveal('#services #osx', {origin:'bottom',distance:'50px',duration:1600})
+    .reveal('#services #linux', {origin:'top',distance:'50px',duration:1700})
+    .reveal('#services #terminal', {origin:'bottom',distance:'50px',duration:1800})
+    .reveal('#footer1', {origin:'left',distance:'50px',duration:1200})
+    .reveal('#footer2', {origin:'bottom',distance:'50px',duration:1400})
+    .reveal('#footer4', {origin:'right',distance:'50px',duration:1200});
+// Countdown
+	$('.countdown').downCount({
+		date: '04/30/2016 23:00:00',
+		offset: +10
+	});
+});
+</script>
+{% endblock %}

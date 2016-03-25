@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% load i18n static mezzanine_tags blog_tags keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% if page %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% else %}
+{% trans "Blog" %}
+{% endif %}
+{% endblock %}
+
+{% block pro-text %}
+
+{% spaceless %}
+{% if tag %}
+    {{ tag }}
+{% else %}{% if category %}
+    {{ category }}
+{% else %}{% if year or month %}
+    {% if month %}{{ month }}, {% endif %}{{ year }}
+{% else %}{% if author %}
+    {{ author.get_full_name|default:author.username }}
+{% else %}{{ settings.SITE_TAGLINE }}
+{% endif %}{% endif %}{% endif %}{% endif %}
+{% endspaceless %}
+{% endblock pro-text %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+{% if tag or category or year or month or author %}
+<li>{% spaceless %}
+{% if tag %}
+    {% trans "Tag:" %} {{ tag }}
+{% else %}{% if category %}
+    {% trans "Category:" %} {{ category }}
+{% else %}{% if year or month %}
+    {% if month %}{{ month }}, {% endif %}{{ year }}
+{% else %}{% if author %}
+    {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
+{% endif %}{% endif %}{% endif %}{% endif %}
+{% endspaceless %}
+</li>
+{% endif %}
+{% endblock %}
+
+{% block main %}
+{% if tag or category or year or month or author %}
+    {% block blog_post_list_filterinfo %}
+    <p>
+    {% if tag %}
+        {% trans "Viewing posts tagged" %} <span class="label label-default">{{ tag }}</span>
+    {% else %}{% if category %}
+        {% trans "Viewing posts for the category" %} <span class="label label-default">{{ category }}</span>
+    {% else %}{% if year or month %}
+        {% trans "Viewing posts from" %} <span class="label label-default">{% if month %}{{ month }}, {% endif %}
+        {{ year }}</span>
+    {% else %}{% if author %}
+        {% trans "Viewing posts by" %}
+        <span class="label label-default">{{ author.get_full_name|default:author.username }}</span>
+    {% endif %}{% endif %}{% endif %}{% endif %}
+    {% endblock %}
+    </p>
+{% else %}
+    <div class="hidden"><p>
+    {% if page %}
+    {% block blog_post_list_pagecontent %}
+    {% if page.get_content_model.content %}
+        {% editable page.get_content_model.content %}
+        {{ page.get_content_model.content|richtext_filters|safe }}
+        {% endeditable %}
+    {% endif %}
+    {% endblock %}
+    {% endif %}
+    </p></div>
+{% endif %}
+
+{% for blog_post in blog_posts.object_list %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="card card-horizontal">
+            <div class="row">
+                <div class="col-md-5">
+                    {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                    {% block blog_post_list_post_featured_image %}
+                    <div class="image">
+                        <img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 260 260 %}" alt="..." />
+                        <div class="filter">
+                            <button type="button" class="btn btn-neutral btn-simple">
+                                <i class="fa fa-align-left"></i>
+                                <a href="{{ blog_post.get_absolute_url }}"> {% trans "read more" %}</a>
+                            </button>
+                            <button type="button" class="btn btn-neutral btn-simple">
+                                {% if blog_post.allow_comments %}
+                                {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                                <i class="fa fa-comments"></i>
+                                <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                                    data-disqus-identifier="{% disqus_id_for blog_post %}">
+                                </a> {% trans "Comments" %}
+                                {% else %}
+                                <a href="{{ blog_post.get_absolute_url }}#comments">
+                                    {% if blog_post.comments_count == 1 %}<i class="fa fa-comment"></i>
+                                    {% elif blog_post.comments_count > 1 %}<i class="fa fa-comments"></i>
+                                    {% else %}<i class="fa fa-comment-o"></i>
+                                    {% endif%}
+                                    {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                                </a>
+                                {% endif %}
+                                {% endif %}
+                            </button>
+                        </div>
+                    </div>
+                    {% endblock %}
+                    {% endif %}
+                </div>
+                <div class="col-md-7">
+                    <div class="content">
+                        {% with blog_post.categories.all as categories %}
+                        {% if categories %}
+                        <p class="category">
+                            {% for category in categories %}
+                            <a href="{% url 'blog_post_list_category' category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </p>
+                        {% endif %}
+                        {% endwith %}
+                        {% block blog_post_list_post_title %}
+                            {% editable blog_post.title %}
+                            <a class="card-link" href="{{ blog_post.get_absolute_url }}">
+                                <h4 class="title">{% if blog_post.meta_title %}{{ blog_post.meta_title }}{% else %}{{ blog_post.title }}{% endif %}
+                                </h4>
+                            </a>
+                            {% endeditable %}
+                        {% endblock %}
+                        <p>
+                            {% block blog_post_list_post_content %}
+                            {% editable blog_post.content %}
+                            {{ blog_post.description|safe }}
+                            {% endeditable %}
+                            {% endblock %}
+                        </p>
+                        <div class="footer">
+                            {% with blog_post.user as author %}
+                            <div class="author">
+                                <a class="card-link" href="{% url 'blog_post_list_author' author %}">
+                                   <img src="{% static 'assets/img/placeholder.png' %}" alt="..." class="avatar">
+                                   <span> {{ author.get_full_name|default:author.username }}</span>
+                                </a>
+                            </div>
+                            {% endwith %}
+                            <div class="stats pull-right">
+                                <span rel="popover"  data-placement="top" title="" data-popover-content="#popover-content-tags" >
+                                    <i class="fa fa-tags fa-lg"></i>
+                                </span>
+                                <div id="popover-content-tags" class="popover-content hide">
+                                    {% keywords_for blog_post as tags %}
+                                    {% if tags %}
+                                    <ul class="list-inline tags">
+                                    {% spaceless %}
+                                    {% for tag in tags %}
+                                    <li><a href="{% url 'blog_post_list_tag' tag.slug %}" class="tag label label-success">{{ tag }}</a>{# {% if not forloop.last %}, {% endif %} #}</li>
+                                    {% endfor %}
+                                    {% endspaceless %}
+                                    </ul>
+                                    {% endif %}
+                                </div>
+                                {% editable blog_post.publish_date %}
+                                <span rel="popover" data-placement="top" title="" data-popover-content="#popover-content-date" >
+                                    <i class="fa fa-clock-o fa-lg"></i>
+                                </span>
+                                {% endeditable %}
+                                <div id="popover-content-date" class="popover-content hide">
+                                    <ul class="list-inline tags">
+                                        <li>{{ blog_post.publish_date|date:'d M Y' }}</li>
+                                    </ul>
+                                </div>
+                                {% block blog_post_detail_sharebuttons %}
+                                {% set_short_url_for blog_post %}
+                                <!--TODO  multi-->
+                                <span rel="popover" data-placement="top" title="" data-popover-content="#popover-content-social" >
+                                    <i class="fa fa-share-alt-square fa-lg"></i>
+                                </span>
+                                <div id="popover-content-social" class="popover-content hide">
+                                    <ul class="list-unstyled">
+        <li><a class="btn btn-social btn-fill btn-twitter" target="_blank"
+            href="https://twitter.com/intent/tweet?url={{ blog_post.short_url|urlencode }}&amp;text={{ blog_post.title|urlencode }}&amp;via={{ 'Melindro.org'|urlencode }}" >
+             <i class="fa fa-twitter"></i>
+        </a></li>
+        <li><a class="btn btn-social btn-fill btn-facebook" target="_blank"
+           href="https://facebook.com/sharer.php?u={{ blog_post.short_url|urlencode }}&amp;t={{ blog_post.title|urlencode }}" >
+            <i class="fa fa-facebook"></i>
+        </a></li>
+        <li><a class="btn btn-social btn-fill btn-google" target="_blank"
+           href="https://plus.google.com/share?url={{ blog_post.short_url|urlencode }}" >
+            <i class="fa fa-google-plus"></i>
+        </a></li>
+        <li><a class="btn btn-social btn-fill btn-pinterest" target="_blank"
+           href="https://pinterest.com/pin/create/bookmarklet/?media={{ 'http://'|urlencode  }}{{ request.site }}{{ '/'|urlencode  }}{{ MEDIA_URL }}{{ 'uploads/melindro.png'|urlencode }}&amp;url={{ blog_post.short_url|urlencode }}&amp;description={{ blog_post.title|urlencode }}" >
+            <i class="fa fa-pinterest-p"></i>
+        </a></li>
+        <li><a class="btn btn-social btn-fill" target="_blank"
+           href="mailto:?subject={% trans 'I would like to share this:' %}%20{{ blog_post.title|urlencode }}&amp;body={% trans 'This is a interesting blog post:'%}%20{{ blog_post.title|urlencode }}%20{{ blog_post.short_url|urlencode }}">
+            <i class="fa fa-envelope"></i>
+        </a></li>
+                                    </ul>
+                                </div>
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end card -->
+{% block blog_post_list_post_metainfo %}
+{% endblock %}
+{% block blog_post_list_post_links %}
+{% endblock %}
+    </div>
+</div>
+{% endfor %}
+
+{% pagination_for blog_posts %}
+
+{% if settings.COMMENTS_DISQUS_SHORTNAME %}
+{% include "generic/includes/disqus_counts.html" %}
+{% endif %}
+
+{% endblock %}
+
+{% block right_panel %}
+{% include "blog/includes/filter_panel.html" %}
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+$(function(){
+    if($('[rel="popover"]').length != 0){
+       $('body').append('<div class="popover-filter"></div>');
+
+        $('[rel="popover"]').popover({
+                container: 'body',
+                html: true,
+                content: function () {
+                    var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+                    return clone;
+                }
+            }).on('show.bs.popover', function () {
+                    $('.popover-filter').click(function(){
+                        $(this).removeClass('in');
+                        $('[rel="popover"]').popover('hide');
+                    });
+                    $('.popover-filter').addClass('in');
+            }).on('hide.bs.popover', function(){
+                    $('.popover-filter').removeClass('in');
+            })
+        .click(function(e) {
+            e.preventDefault();
+        });
+    }
+});
+</script>
+{% endblock %}

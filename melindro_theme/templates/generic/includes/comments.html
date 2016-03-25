@@ -1,0 +1,65 @@
+{% load i18n mezzanine_tags comment_tags %}
+<div id="comments">
+    <div class="well bs-component">
+        <legend>{% trans 'Comments' %}</legend>
+    {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+            {% include "generic/includes/disqus_comments.html" %}
+    </div>
+    {% else %}
+            {% block extra_js %}
+<!--                <script>
+                $(function() {
+                    $('.reply').click(function() {
+                        $('.comment-reply-form').hide();
+                        $(this).siblings('.comment-reply-form').toggle();
+                    });
+                });
+                </script>-->
+                <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+                <style>.input_id_honeypot {display:none !important;}</style>
+            {% endblock%}
+            {% comment_thread object_for_comments %}
+        <!-- Button trigger modal -->
+        <div class="row">
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#CommentModal">
+          {% trans 'New Comment' %}
+        </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="te">
+                        <form method="post" class="form-horizontal" _lpchecked="1" id="comment" action="{{ comment_url }}#comment">
+                        <fieldset>
+                        <legend>{% trans 'New Comment' %}<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></legend>
+                        {% if not request.POST.replied_to %}
+                            {% fields_for posted_comment_form %}
+                        {% else %}
+                            {% fields_for unposted_comment_form %}
+                        {% endif %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-8">
+                                       <div class="g-recaptcha" data-sitekey="6Ld4NtoSAAAAADJI5LxCygWLou5zp0ME3j4t1p3D"></div>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-4">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> {% trans 'Comment' %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+        <!--<div class="well bs-component">-->
+        <!--</div>-->
+    {% endif %}
+</div>

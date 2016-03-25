@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <cuquet@gmail.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-08 02:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Catalan <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: melindro_theme/static/js/jquery.downCount.js:83
+msgid "day"
+msgstr "dia"
+
+#: melindro_theme/static/js/jquery.downCount.js:83
+msgid "days"
+msgstr "dies"
+
+#: melindro_theme/static/js/jquery.downCount.js:84
+msgid "hour"
+msgstr "hora"
+
+#: melindro_theme/static/js/jquery.downCount.js:84
+msgid "hours"
+msgstr "hores"
+
+#: melindro_theme/static/js/jquery.downCount.js:85
+msgid "minute"
+msgstr "minut"
+
+#: melindro_theme/static/js/jquery.downCount.js:85
+msgid "minutes"
+msgstr "minuts"
+
+#: melindro_theme/static/js/jquery.downCount.js:86
+msgid "second"
+msgstr "segon"
+
+#: melindro_theme/static/js/jquery.downCount.js:86
+msgid "seconds"
+msgstr "segons"
+
+#: melindro_theme/static/share-buttons/share-buttons.js:101
+msgid "I would share this :"
+msgstr "Voldria compartir-ho això:"

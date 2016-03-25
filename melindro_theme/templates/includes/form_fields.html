@@ -1,0 +1,39 @@
+{% load mezzanine_tags widget_tweaks %}
+
+{% nevercache %}
+<input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
+{% csrf_token %}
+{% endnevercache %}
+
+{% for field in form_for_fields %}
+{% if field.is_hidden %}
+{{ field }}
+{% else %}
+<div class="form-group input_{{ field.id_for_label }} {{ field.field.type }} {% if field.errors %} has-error{% endif %} has-feedback">
+    {% with inputError2Status=field.auto_id|add:"_Error2Status"  %}
+    <label class="sr-only control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+    <div class="input-group">
+        {% render_field field class+="form-control" aria-describedby=inputError2Status placeholder=field.label %}
+        <span class="input-group-addon">
+        {% if field.name == "username" or field.name == "name" %}<i class="fa fa-user fa-fw"></i>{% endif %}
+        {% if field.name in "password1password2" %}<i class="fa fa-unlock-alt fa-fw"></i>{% endif %}
+        {% if field.name == "email" %}<i class="fa fa-envelope fa-fw"></i>{% endif %}
+        {% if field.name == "url" %}<i class="fa fa-globe fa-fw"></i>{% endif %}
+        {% if field.name == "comment" %}<i class="fa fa-commenting fa-fw"></i>{% endif %}
+        </span>
+    </div>
+        {% if field.errors %}
+            <span class="fa fa-exclamation-triangle form-control-feedback" aria-hidden="true"></span>
+            <span id="{{ inputError2Status }}" class="sr-only">(error)</span>
+            <span class="help-block">
+                {% for e in field.errors %}
+                    {% if not forloop.first %} / {% endif %}{{ e }}
+                {% endfor %}
+            </span>
+        {% elif field.help_text %}
+            <span class="help-block">{{ field.help_text }}</span>
+        {% endif %}
+        {% endwith %}
+</div>
+{% endif %}
+{% endfor %}

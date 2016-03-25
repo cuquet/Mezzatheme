@@ -1,0 +1,57 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+{% if page_branch_in_menu %}
+
+{% if branch_level == 0 %}
+    {% for page in page_branch %}
+    {% if not has_home and page.is_primary and forloop.first %}
+    {# if page.is_primary and forloop.first #}
+    <li class="{% if on_home %}active{% endif %}" id="dropdown-menu-home">
+        <a href="{% url 'home' %}" class="hidden-xs"><i class="pe-7s-home"></i><p>{% trans "Home" %}</p></a>
+        <a href="{% url 'home' %}" class="visible-xs"><i class="pe-7s-home"></i>{% trans "Home" %}</a>
+    </li>
+    {% endif %}
+    {% if page.in_menu%}
+    <li class="{% if page.has_children_in_menu %}dropdown{% endif %} {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}" class="hidden-xs{% if page.has_children_in_menu %} dropdown-toggle{% endif %}">
+            {% if page.html_id == "-" %}<i class="pe-7s-home"></i>{% endif %}
+            {% if page.html_id == "blog" %}<i class="pe-7s-news-paper"></i>{% endif %}
+            {% if page.html_id == "about" %}<i class="pe-7s-users"></i>{% endif %}
+            {% if page.html_id == "gallery" %}<i class="pe-7s-photo-gallery"></i>{% endif %}
+            <p>{{ page.title }}{% if page.has_children_in_menu %}<span class="caret"></span>{% endif %}</p>
+        </a>
+        <a href="{{ page.get_absolute_url }}" class="visible-xs{% if page.has_children_in_menu %} dropdown-toggle{% endif %}">
+            {% if page.html_id == "-" %}<i class="pe-7s-home"></i>{% endif %}
+            {% if page.html_id == "blog" %}<i class="pe-7s-news-paper"></i>{% endif %}
+            {% if page.html_id == "about" %}<i class="pe-7s-users"></i>{% endif %}
+            {% if page.html_id == "gallery" %}<i class="pe-7s-photo-gallery"></i>{% endif %}
+            {{ page.title }}{% if page.has_children_in_menu %}<span class="caret"></span>{% endif %}
+        </a>
+        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+{# Language selection #}
+	{% include "includes/menu_dropdown_language.html" %}
+{# User selection #}
+	{% include "accounts/includes/menu_dropdown_user.html" %}
+{# search form #}
+	{% include "includes/menu_dropdown_search_form.html" %}
+
+{% else %}
+<ul class="dropdown-menu" >
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="{% if page.has_children_in_menu %}dropdown-submenu{% endif %} {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endif %}
+{% endspaceless %}

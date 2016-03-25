@@ -1,0 +1,9 @@
+/melindro_theme/static/assets
+/templates
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+local_settings.py
+/static

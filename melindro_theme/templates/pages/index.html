@@ -1,0 +1,69 @@
+{% extends "pages/richtextpage.html" %}
+{% load pages_tags mezzanine_tags staticfiles %}
+
+{% block extra_css %}
+<style type="text/css">
+/* Services */
+h1, h2, h3, h4, h5, h6{
+    font-family:'Coustard', sans-serif;
+    font-weight:300;
+}
+.parallax .small-info h1 {
+    color:#FFFFFF;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.parallax .small-info h1 .subtitle {
+    display:inline;
+}
+.parallax .small-info p {
+    color: #777777;
+    text-align:left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right:10px;
+}
+#services {margin: 50px 0 0 0;}
+.card-user .avatar {border:0;}
+</style>
+{% endblock extra_css %}
+
+{% block navbarlogo %}
+<div class="logo-container animated bounceInLeft">
+    <div class="logo">
+        <img class="img-circle" src="{% static 'img/logo_d.png' %}">
+    </div>
+</div>
+{% endblock navbarlogo %}
+
+{% block mainbody %}
+{% endblock mainbody %}
+
+{% block wrapper_full %}
+{% editable page.richtextpage.content %}
+{{ page.richtextpage.content|richtext_filters|safe }}
+{% endeditable %}
+{% endblock wrapper_full %}
+<!--{{ block.super }}
+This template is provided as a custom template for the homepage, for
+when it is configured as an editable page in the navigation tree. Feel
+free to modify it.
+-->
+
+
+{% block extra_js %}
+<script type="text/javascript">
+$(function() {
+    // scroll reveal
+	window.sr = ScrollReveal({easing:'ease-in-out'})
+    .reveal('.small-info', {origin:'top',distance:'50px',duration:1400})
+    .reveal('#services #osx', {origin:'bottom',distance:'50px',duration:1600})
+    .reveal('#services #linux', {origin:'top',distance:'50px',duration:1700})
+    .reveal('#services #terminal', {origin:'bottom',distance:'50px',duration:1800})
+    .reveal('#footer1', {origin:'left',distance:'50px',duration:1200})
+    .reveal('#footer2', {origin:'bottom',distance:'50px',duration:1400})
+    .reveal('#footer3', {origin:'bottom',distance:'50px',duration:1600})
+    .reveal('#footer4', {origin:'right',distance:'50px',duration:1200});
+});
+</script>
+{% endblock extra_js %}

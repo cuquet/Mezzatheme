@@ -1,0 +1,39 @@
+/*========================================
+           Waterfall Gallery
+==========================================*/
+.wf-container {
+    margin: 0 auto;
+}
+.wf-container:before,.wf-container:after {
+    content: '';
+    display: table;
+}
+.wf-container:after {
+    clear: both;
+}
+.wf-box {
+    margin: 10px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.40);
+	  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.wf-box img {
+    display: block;
+    width: 100%;
+	-webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius:  5px 5px 0 0;
+	border-radius:  5px 5px 0 0;
+}
+.wf-box .content {
+    border: 1px solid #ccc;
+    border-top-width: 0;
+    padding: 5px 8px;
+	-webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+.wf-column {
+    float: left;
+}

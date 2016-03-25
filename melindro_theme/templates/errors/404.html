@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+
+{% block meta_title %}
+{% trans "Page not found" %}
+{% endblock %}
+
+{% block title %}
+{% trans "Page not found" %}
+{% endblock %}
+
+{% block navbarmenu %}
+<ul class="nav navbar-nav hidden-xs animated bounceInDown">
+{% include "includes/menu_dropdown_language.html" %}
+{% include "accounts/includes/menu_dropdown_user.html" %}
+</ul>
+<ul class="nav nav-pills nav-stacked visible-xs">
+{% include "includes/menu_dropdown_language.html" %}
+{% include "accounts/includes/menu_dropdown_user.html" %}
+</ul>
+{% endblock navbarmenu %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block mainbody %}
+<div class="container">
+    <div id="top-panel" class="jumbotron">
+        <h1>Oops!</h1>
+        <div class="img-src">
+            <img src="{% static 'img/404.png' %}" class="img-responsive center-block" alt="404" width="40%" height="40%">
+        </div>
+            <h2> {% trans "Page not found" %}</h2>
+        <div class="error-details">
+            <br />
+              {% blocktrans %}
+              <p>The page you requested could not be found, either contact your webmaster or try again. Use your browsers
+              <b>Back</b> button to navigate to the page you have prevously come from</p>
+              <p><b>Or you could just press this neat little button:</b></p>
+              {% endblocktrans %}
+        </div>
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>  {% trans "Take Me Home" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style type="text/css">
+h1, h2, h3, h4, h5, h6{
+    font-family:'Coustard', sans-serif;
+    font-weight:300;
+}
+#top-panel{
+    background: rgba(225, 225, 225, 0.9);
+    margin-top:20px;
+    border: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.20)
+}
+#top-panel h1{color:#2d2d2d;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);}
+#top-panel p {font-size: 14px;}
+</style>
+{% endblock %}

@@ -1,0 +1,305 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Coustard);
+body {
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family:'Coustard', sans-serif;
+}
+
+.scrollToTop:hover{text-decoration:none;}
+.scrollToTop {
+	display: block;
+	position: fixed;
+	z-index: 999;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+}
+.bottom-border {
+  border-bottom: 1px solid #DDDDDD;
+}
+.top-border {
+  border-top: 1px solid #DDDDDD;
+}
+
+/*========================================
+            Navbar effect
+==========================================*/
+.navbar-transparent .dropdown-menu .divider{
+height: 1px;
+overflow: hidden;
+margin: 0;
+background-color: #e5e5e5
+}
+/*========================================
+            MEZZANINE BLOG
+==========================================*/
+.tag-cloud li {
+  padding-left: 0;
+}
+.tag-weight-1 {
+  font-size: 90%;
+}
+.tag-weight-2 {
+  font-size: 120%;
+}
+.tag-weight-3 {
+  font-size: 150%;
+}
+.tag-weight-4 {
+  font-size: 180%;
+}
+.tags li {
+  padding-left: 0;
+}
+/*========================================
+          MEZZANINE TWEETS
+==========================================*/
+.tweeter-image {
+  width: 32px;
+  height: 32px;
+  margin-right:5px;
+}
+.tweet {
+  margin-bottom: 20px;
+}
+.tweet h4 {
+  margin-bottom:2px;
+  font-size:17px;
+}
+.tweet h4 small {
+  display:block;
+  line-height:150%;
+}
+.tweet p {
+  font-size:13px;
+  line-height:160%;
+}
+.tweet h6 {
+  margin:5px 0 10px 0;
+}
+.tweet .glyphicon {
+  margin:0 3px;
+}
+
+/*
+* ==========================================================================
+    Preloader
+* ==========================================================================
+*/
+#preload {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index: 10000;
+    opacity: 0.7;
+    -moz-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    filter: alpha(opacity=1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+#preload-status {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    top: 40%;
+}
+
+.navigation-home .img-src{
+    background-attachment: scroll;
+}
+
+.navigation-home{
+    height: 360px;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top:0;
+}
+
+/*
+* ==========================================================================
+   getshitdone
+* ==========================================================================
+*/
+.parallax{
+    width: 100%;
+    height: 780px;
+    overflow: hidden;
+    display: block;
+}
+
+.logo-container .logo{
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    width: 50px;
+    float: left;
+}
+
+.logo-container .brand{
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 20px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    /*width: 50px;*/
+    height: 50px;
+}
+.logo-container{
+    margin-top: 10px;
+}
+.logo-container .logo img{
+    width: 100%;
+}
+.navbar-small .logo-container .brand{
+    color: #333333;
+}
+.parallax .motto{
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.27);
+    text-transform: uppercase;
+    z-index: 3;
+    margin: 0 auto;
+    top: 35%;
+    width: 35%;
+}
+.motto .pro{
+    position: absolute;
+    bottom: 74px;
+    right: -28px;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    color: #333333;
+    text-shadow: 0 0 0;
+}
+.motto .square{
+    padding: 7px 14px;
+    height: auto;
+    width: auto;
+    line-height: inherit;
+    border-radius: 6px;
+    bottom: 52px;
+    right: -30px;
+    color: #FFFFFF;
+    background-color: #ff9500;
+    font-weight: 300;
+}
+.parallax .motivation{
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.27);
+    top: 400px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+/*     font-size: 25px; */
+}
+.parallax .small-info {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.27);
+    top: 20%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+.parallax .motto .border{
+    /*float: left;*/
+    border-top: 3px solid #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    padding: 0px 30px;
+    text-align: center;
+}
+.parallax .motto .no-right-border{
+    border-right: none;
+}
+.parallax .parallax-image{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+.parallax .parallax-image img{
+    width: 100%;
+    position: relative;
+}
+
+@media (max-width: 768px){
+    .parallax .parallax-image{
+         width: 100%;
+         height: 780px;
+         overflow: hidden;
+    }
+    .parallax .parallax-image img{
+       height: 100%;
+       width: auto;
+    }
+    .parallax .motivation {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    padding: 5px;
+    font-size: 20px !important ;
+    }
+    .parallax .motto{
+        top: 170px;
+        margin-top: 0;
+        font-size: 60px;
+        width: 270px;
+    }
+    .parallax .small-info {
+        top: 0;
+    }
+    .dropdown-menu{
+        float: none;
+    }
+}
+
+.filter-black{
+    position: relative;
+}
+.filter-black:after{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    background-color: rgba(0,0,0,.66);
+    content: "";
+}
+
+.social-buttons .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+
+body > .navbar-collapse .nav > li > a{margin: 0;}
+.navbar-form{margin-left:0;}
+.popover-content{margin:0;padding:5px;}
+.popover-content ul {
+    margin:0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #9A9A9A;
+}
+.popover-content ul li a{
+    margin-top:5px;
+}

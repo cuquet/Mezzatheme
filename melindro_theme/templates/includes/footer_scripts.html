@@ -1,0 +1,87 @@
+{% load mezzanine_tags staticfiles i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% editable_loader %}
+
+{% if settings.GOOGLE_ANALYTICS_ID and not request.user.is_staff %}
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '{{ settings.GOOGLE_ANALYTICS_ID }}', 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
+
+<script type="text/javascript">
+var disqus_config = function () {
+    this.language = "{{ LANGUAGE_CODE }}";
+};
+$(function () {
+    // PreLoader
+	$(window).load(function() {
+	    "use strict";
+	     setTimeout(function() {
+            $('#preload').delay(2000).fadeOut(1000); //.addClass('animated fadeOutUp'); //
+        });
+    });
+    //Language selector on navbar top ul->li
+    $("#language-list li").click(function(){
+        var postdata={
+                  'language':$(this).attr('rel'),
+                  'csrfmiddlewaretoken': '{{ csrf_token }}'
+             }
+        $.post( "{% url "set_language" %}", postdata ).done(function( data ) {
+                location.reload();
+              });
+    });
+    if ( $('#language_selector_form' ).length ) {
+        $('#language_selector_form').change(function(){
+            this.submit();
+        });
+        $('#language_selector_form > input').hide();
+    }
+    //Check to see if the window is top if not then display button
+    $('.scrollToTop').hide();
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 30) {
+            $('.scrollToTop').show().removeClass('animated rollOut').addClass('animated rollIn'); //.fadeIn();
+        } else {
+            $('.scrollToTop').removeClass('animated rollIn').addClass('animated rollOut'); //.fadeOut();
+        }
+    });
+    //Click event to scroll to top
+    $('.scrollToTop').on('click', function(event) {
+        event.preventDefault();
+        $('html, body, div.main').animate({scrollTop : 0},800);
+    });
+    // Tooltip start
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<script type="text/javascript">
+{% nevercache %}
+{% if messages %}
+{% for message in messages %}
+$.notify({
+    icon: 'fa fa-info-circle',
+    message: '{{ message }}',
+},{
+    type: "info",
+    allow_dismiss: true,
+    newest_on_top: true,
+    animate: {
+        enter: 'animated bounceIn',
+        exit: 'animated bounceOut'
+    },
+    offset: {
+		x: 50,
+		y: 120
+	}
+});
+{% endfor %}
+{% endif %}
+{% endnevercache %}
+</script>
