@@ -42,7 +42,7 @@ urlpatterns += [
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    #url("^$", direct_to_template, {"template": "soon.html"}, name="home"),
+    url("^$", direct_to_template, {"template": "soon.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -58,7 +58,7 @@ urlpatterns += [
     # should be used if you want to customize the homepage's template.
     # NOTE: Don't forget to import the view function too!
 
-    url("^$", mezzanine.pages.views.page, {"slug": "/"}, name="home"),
+    #url("^$", mezzanine.pages.views.page, {"slug": "/"}, name="home"),
 
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------

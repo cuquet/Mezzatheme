@@ -11,11 +11,7 @@
 {% endblock %}
 
 {% block navbarmenu %}
-<ul class="nav navbar-nav hidden-xs animated bounceInDown">
-{% include "includes/menu_dropdown_language.html" %}
-{% include "accounts/includes/menu_dropdown_user.html" %}
-</ul>
-<ul class="nav nav-pills nav-stacked visible-xs">
+<ul class="nav navbar-nav navbar-right">
 {% include "includes/menu_dropdown_language.html" %}
 {% include "accounts/includes/menu_dropdown_user.html" %}
 </ul>
@@ -27,14 +23,20 @@
 {% block main %}
 <div class="container">
     <div id="top-panel" class="jumbotron">
-        <h1>Oops!</h1>
-        <div class="img-src">
-            <img src="{% static 'img/bg_404.png' %}" >
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Oops!</h1>
+                <h2 class="panel-title">{% trans "Error" %}</h2>
+                <div class="error-details">{% trans "Sorry, an error occurred." %}</div>
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span> {% trans "Take Me Home" %}</a>
+                </div>
+            </div>
         </div>
-        <h2 class="panel-title">{% trans "Error" %}</h2>
-        <div class="error-details">{% trans "Sorry, an error occurred." %}</div>
-        <div class="error-actions">
-            <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span> {% trans "Take Me Home" %}</a>
+        <div class="col-md-7">
+            <div class="img-src">
+                <img src="{% static 'img/bg_404.png' %}" >
+            </div>
         </div>
     </div>
 </div>
@@ -57,3 +59,17 @@ h1, h2, h3, h4, h5, h6{
 #top-panel p {font-size: 14px;}
 </style>
 {% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+    $(window).load(function(e){
+        var lng_scroll;
+        if (responsive >= 768){
+            lng_scroll= '+=700px';
+        } else {
+            lng_scroll= '+=600px';
+        }
+        $('html, body').animate({scrollTop: lng_scroll}, 800);
+    });
+</script>
+{% endblock extra_js %}
