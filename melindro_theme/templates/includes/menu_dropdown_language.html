@@ -4,11 +4,11 @@
 {% get_language_info_list for LANGUAGES as languages %}
 <li class="dropdown">
     <a href="#" class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" >
-        <i class="pe-7s-world pe-3x pe-va"></i><span class="badge">{{ LANGUAGE_CODE }}</span>
+        <i class="pe-7s-world"></i><span class="badge">{{ LANGUAGE_CODE }}</span>
         <p>{% trans "Language" %}<span class="caret"></span></p>
     </a>
     <a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" role="button">
-        <i class="pe-7s-world pe-va">&nbsp;{% trans "Language" %}</i>&nbsp;<span class="badge">{{ LANGUAGE_CODE }}</span><span class="caret"></span>
+        <i class="pe-7s-world"></i>&nbsp;{% trans "Language" %}&nbsp;<span class="badge">{{ LANGUAGE_CODE }}</span><span class="caret"></span>
     </a>
         {% static "assets/img/flags/" as flag_path %}
 		<ul class="dropdown-menu" id="language-list" role="menu">
